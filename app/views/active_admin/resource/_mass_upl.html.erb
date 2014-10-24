@@ -1,0 +1,40 @@
+<h3><br />
+	<a href="#" id="mass_upl" 
+	style="font-size: 16px; color: #4289AC !important; text-decoration: none; border-bottom: 1px #4289AC dashed;">
+		Загрузить несколько фото сразу
+	</a>
+</h3>
+<div id="workfield" style="display: none;">
+    <div id="content">
+        
+        <div>
+            <form method="POST" enctype="multipart/form-data">
+                Чтобы добавить картинки, загрузите их (не более 10)<br/>
+				<input type="file" class="file-input-hidden" name="my-pic" id="file-field"  onchange="javascript: document.getElementById('fileName').value = this.value" />
+                <input type="hidden" name="upl_href" id="upl_href" value="<%= upl_url %>" >
+                <input type="hidden" name="field_for_file" id="field_for_file" value="<%= file_field %>" >
+                <br /><br /><span id="dropBox-label">... или просто перетащи в область ниже &dArr;</span>
+            </form>
+        </div>
+        <div id="img-container" class="img-previews">
+            <ul id="img-list"></ul>
+            <div class="clear"></div>
+        </div>
+        <br/>
+        <div id="actions">
+            <span id="info-count">Изображений не выбрано</span><br/>
+            Общий размер: <span id="info-size">0</span> Кб<br/><br/>
+            <button class="btn" id="upload-all">Загрузить все</button>
+            <button class="btn" id="cancel-all">Отменить все</button>
+            <div class="clear"></div>
+        </div>
+      </div>
+</div>
+<script>
+	$(function() {
+		$('#mass_upl').click(function(event) {
+			event.preventDefault();
+			$('#workfield').toggle();
+		})
+	});
+</script>

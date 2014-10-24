@@ -1,0 +1,32 @@
+<%= form_tag admin_settings_save_path, method:'post', :class=>"formtastic company" do %>
+	<fieldset class="inputs">
+		
+		<legend>
+		<span>Настройки</span>
+		</legend>
+		<ol>
+			<% settings.each do |v| %>
+				<% section = params[:section] ? params[:section]:'contacts' %>
+				<% if v.section == section %>
+					<li id="setting_title_input" class="string input required stringish">
+						<label class="label" for="setting_title">
+							<%= v.title %>
+						</label>
+						<% if v.type == 'string' %>
+							<%= text_field :values, v.key, :value=>v.value %>
+						<% elsif v.type == 'text' %>
+							<%= text_area :values, v.key, :value=>v.value, :rows=>5 %>
+						<% end %>
+					</li>
+				<% end %>
+			<% end %>
+		</ol>
+	</fieldset>
+	<fieldset class="actions">
+		<ol>
+			<li id="company_submit_action" class="action input_action ">
+				<input type="submit" value="Сохранить настройки" name="commit">
+			</li>
+		</ol>
+	</fieldset>
+<% end %>

@@ -1,0 +1,31 @@
+meta:
+  title: 'Meta'
+  elems:
+    meta_title:
+      title: 'Мета заголовок для сайта'
+      type: 'string'
+    meta_desc:
+      title: 'Мета описание сайта'
+      type: 'string'
+  
+contacts: 
+  title: 'Контактные данные'
+  elems: 
+    email:
+      title: 'E-mail для уведомлений'
+      type: 'string'
+    address:
+      title: 'Адрес'
+      type: 'string'
+    
+counter: 
+  title: 'Счетчик'
+  elems: 
+    login:
+      title: 'Логин'
+      type: 'string'
+      position: 1
+    code:
+      title: 'Код счетчика'
+      type: 'text'
+      position: 2

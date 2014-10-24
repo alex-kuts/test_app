@@ -1,0 +1,68 @@
+// SASS variable overrides must be declared before loading up Active Admin's styles.
+//
+// To view the variables that Active Admin provides, take a look at
+// `app/assets/stylesheets/active_admin/mixins/_variables.css.scss` in the
+// Active Admin source.
+//
+// For example, to change the sidebar width:
+// $sidebar-width: 242px;
+
+// Active Admin's got SASS!
+@import "active_admin/mixins";
+@import "active_admin/base";
+@import "chosen";
+@import "active_admin/chosen";
+@import 'ckeditor/skins/moono/editor_gecko';
+@import 'ckeditor/contents';
+@import "just_datetime_picker/base";
+body {margin: 0;}
+//ckeditor
+.cke {
+  border: 1px solid #C9D0D6;
+    border-radius: 3px 3px 3px 3px;
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 0.95em;
+    outline: medium none;
+    padding: 8px 10px 7px;
+    width: 77% !important;
+    display: table;
+}
+.cke_chrome { display: table !important; }
+.dropdown_menu_list {z-index:1000;}
+
+//tables
+table.index th.images, table.index td.images {width:40px;}
+table.index th.selectable, table.index td.selectable {width:20px;}
+.item a {display:block; float:left; }
+.item h3 {display:block; width:94%;}
+.item a.title {display:block; margin: 10px 0 10px 10px;}
+.item a.right-actions {float: right !important; margin: 10px 0 10px 15px;}
+
+//gallery
+.index_as_gallery {
+    display: table;}
+.itemGal { width: 117px; height: 117px; float: left; margin: 5px 10px 5px 0; padding: 6px; background: #fff; border: solid 1px #e0e0e0; position: relative; box-shadow: #e7e7e7 2px 2px 2px;
+border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; z-index:1;}
+.itemGal img { border: solid 1px #e0e0e0; }
+.itemGal .infoHover { position: absolute; top: 7px; left: 7px; width: 106px; height: 96px; padding: 20px 0 0 10px; color: #eee; background: url(/images/opacity.png); display: none; }
+.itemGal .infoHover label { padding-left: 7px; }
+.itemGal .infoHover .clear { height: 10px; }
+.itemGal .resource_selection_cell {width:10px; float: left}
+.itemGal label, input[type="radio"] {float:left;}
+.clear { clear: both; font-size: 0; line-height: 0; height: 0; }
+
+//mass upl
+.img-previews { width:100%; min-height: 100px; border: 1px #4289AC solid; padding: 15px 0px 0px; background: #f6f6f6; }
+.img-previews li { float: left; width: 150px; margin: 0px 30px 15px; padding: 10px; height: 170px; text-align: center; border: 1px #4289AC solid;  background: #E5F6FF; }
+.img-previews li > div { max-height: 40px; overflow: hidden; margin: 0px 0px 5px; }
+.img-previews li > div a { display: block; color: #c00; font-weight: bold; text-decoration: none; }
+.img-previews li > div a:hover { text-decoration: underline; }
+.img-previews li > div.progress { margin: 0px; padding: 0px; height: 18px; line-height: 18px; background: url(/images/pbar_bgr.png) no-repeat -150px 50%; }
+.img-previews li img { max-height: 120px; }
+
+fieldset.drop-down legend, fieldset.drop-up legend {cursor: pointer;}
+fieldset.drop-down ol {display: none;}
+// Overriding any non-variable SASS must be done after the fact.
+// For example, to change the default status-tag color:
+//
+//   .status_tag { background: #6090DB; }
